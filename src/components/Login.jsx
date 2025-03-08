@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Login.css';
+import sample from '../assets/sample.jpg'
 
 const Login = () => {
 
@@ -18,10 +19,7 @@ const Login = () => {
    <div className='main-log'>
     <div className='left'>
 
-    <h1> sample text to shown </h1>
-      <h3> sub title and description </h3>
-      <h4> contacts and others</h4>
-
+   <img src={sample} alt='sample' className='sample'></img>
 
     </div>
     <div className='right'>

@@ -1,4 +1,96 @@
-/* src/App.css */
+body{
+  overflow: hidden;
+}
+.chatbot-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    z-index: 999;
+  }
+  
+  .chatbot-container {
+    position: fixed;
+    bottom: 80px;
+    right: 20px;
+    width: 300px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .chatbot-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #007bff;
+    color: white;
+    padding: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .chatbot-messages {
+    padding: 10px;
+    min-height: 150px;
+    max-height: 250px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .user-msg {
+    align-self: flex-end;
+    background: #007bff;
+    color: white;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
+    max-width: 70%;
+  }
+  
+  .bot-msg {
+    align-self: flex-start;
+    background: #f1f1f1;
+    padding: 8px;
+    margin: 5px;
+    border-radius: 10px;
+    max-width: 70%;
+  }
+  
+  .chatbot-input-container {
+    display: flex;
+    border-top: 1px solid #ddd;
+    padding: 10px;
+    background: #fff;
+  }
+  
+  .chatbot-input-container input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+  }
+  
+  .chatbot-input-container button {
+    background: #007bff;
+    color: white;
+    border: none;
+    padding: 8px 12px;
+    margin-left: 5px;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  /* src/App.css */
 /* body.light {
     background-color: rgb(255, 254, 254);
     color: black;
@@ -96,19 +188,19 @@ body{
   height: 100vh; 
 }
 
-.left {
+.homeleft {
   flex: 0 0 30%; 
   background-color: #f4f4f4; 
   padding: 20px;
 }
 
-.center {
+.homecenter {
   flex: 0 0 50%;
   background-color: #e4e4e4; 
   padding: 20px;
 }
 
-.right {
+.homeright {
   flex: 0 0 20%;
   background-color: #d4d4d4; 
   padding: 20px;
@@ -119,7 +211,7 @@ body{
   height: 100vh;
 }
 
-.left, .center, .right {
+.homeleft, .homecenter, .homeright {
   padding: 20px;
   box-sizing: border-box;
 }
@@ -130,19 +222,19 @@ body{
   height: 100vh; 
 }
 
-.left {
+.homeleft {
   flex: 0 0 20%; 
   background-color: #f4f4f4; 
   padding: 20px;
 }
 
-.center {
+.homecenter {
   flex: 0 0 60%; 
   background-color: #1a7a83;
   padding: 20px;
 }
 
-.right {
+.homeright {
   flex: 0 0 20%;
   background-color: white;
   padding: 20px;
