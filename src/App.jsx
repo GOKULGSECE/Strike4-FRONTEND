@@ -4,6 +4,8 @@ import Homepage from './component/homepage';
 import NewsCard from './component/NewsCard';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import PreferencesForm from './component/PreferencesForm';
+import Dashboard from './component/Dashboard';
+import Platform from './component/Platform';
 
 function App() {
   return (
@@ -15,6 +17,8 @@ function App() {
           <Route path="/homepage" element={<Homepage/>} />
           <Route path="/preference" element={<PreferencesForm/>}/>
           <Route path="/insights" element={<NewsCard/>} />
+          <Route path='/dashboard' element={<Dashboard/>}/>
+          <Route path='/platform' element={<Platform/>}/>
         </Routes>
       </div>
     </BrowserRouter>

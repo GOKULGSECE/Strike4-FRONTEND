@@ -1,4 +1,6 @@
-
+body{
+  overflow:unset;
+}
 .news-container {
     display: flex;
     flex-direction: column;
@@ -6,6 +8,7 @@
     gap: 15px;
     width: 50%;
     margin: 20px auto;
+    margin-top: 100px;
   }
   .news-card {
     display: flex;

@@ -3,13 +3,14 @@ import Joyride from "react-joyride";
 import { Menu, Dropdown, Avatar } from "antd";
 import { UserOutlined, PoweroffOutlined, ManOutlined, WomanOutlined } from "@ant-design/icons";
 import "../styles/home.css";
+import NewsCard from '../component/NewsCard.jsx';
 
 const Homepage = () => {
   const [chatOpen, setChatOpen] = useState(false);
   const [messages, setMessages] = useState([{ text: "Hello! How can I assist you?", sender: "bot" }]);
   const [userInput, setUserInput] = useState("");
   const [runTour, setRunTour] = useState(false);
-  const [userGender, setUserGender] = useState("male"); // Dynamic user gender
+  const [userGender, setUserGender] = useState("male");
 
   useEffect(() => {
     setTimeout(() => {
@@ -82,11 +83,13 @@ const Homepage = () => {
           <h1>FlowFi</h1>
           <h1>FlowFi</h1>
         </div>
-        <a href="#">Home</a>
-        <a href="#">Dashboard</a>
-        <a href="#">Insights</a>
+        
+        <a href="/homepage">Home</a>
+        <a href="/platform">Platform</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/insights">Insights</a>
 
-        <Dropdown overlay={menu} trigger={["click"]}>
+        <Dropdown  trigger={["click"]}>
           <div className="profile-icon" onClick={(e) => e.preventDefault()}>
             <Avatar
               icon={userGender === "male" ? <ManOutlined /> : <WomanOutlined />}

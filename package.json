@@ -19,6 +19,7 @@
     "react-joyride": "^2.9.3",
     "react-redux": "^9.2.0",
     "react-router-dom": "^7.3.0",
+    "recharts": "^2.15.1",
     "strike4-frontend": "file:"
   },
   "devDependencies": {
