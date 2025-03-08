@@ -3,29 +3,37 @@ body{
 }
 .topic{
     position: relative;
-    width: 100%;
-    height: 100%;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     margin-top: -30px;
   }
   
-  .topic h2{
+  .topic h1{
+   
     position: absolute;
     align-items: center;
-    text-align: center;
-    font-size: 50px;
+    text-align: flex-start;
+    font-size: 80px;
+    padding-left: 18%;
+    top: -170px;
+  
   }
   
-  .topic h2:nth-child(1){
+  .topic h1:nth-child(1){
     color: #ffffff;
     text-shadow: 0 0 10px #1dafe4, 0 0 20px #1dafe4, 0 0 40px #1dafe4, 0 0 80px #1dafe4, 0 0 120px #1dafe4;
     animation: flicker 1.5s infinite alternate;
   }
   
-  .topic h2:nth-child(2){
+  .topic h1:nth-child(2){
     color: transparent;
     -webkit-text-stroke: 2px #1dafe4;
+  }
+
+  .topic h2{
+    margin-top: 16%;
+    margin-left: 18%;
+    font-size: 30px;
   }
   
   @keyframes flicker {
@@ -54,7 +62,7 @@ body{
     .main-log .right{
       /* border: 2px solid pink; */
       width: 30%;
-      margin-left: 70%;
+      margin-left: 60%;
     margin-top: -630px;
   
    

@@ -3,25 +3,26 @@ import { Link } from 'react-router-dom';
 
 import '../styles/SignUp.css';
 import sample from '../assets/sample.jpg'
+import TypingAnimation from '../component/TypingText';
 
 const SignUp = () => {
  
   return (
     <>
-   <div className='topic'>
-   <h1>
-   Flowfi
-    </h1>
-    <h1>
-    Flowfi
-    </h1>
-   </div>
+   
    <div className='main-sig'>
     <div className='leftt'>
-      
-
      
-      <img src={sample} alt='sample' className='sample'></img>
+    <div className='topic'>
+        <h1>
+            FlowFi
+          </h1>
+          <h1>
+          FlowFi
+          </h1>
+
+         <TypingAnimation/>
+    </div>
       
 
     </div>

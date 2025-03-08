@@ -34,7 +34,7 @@
 body{
   overflow: hidden;
 }
-.topic{
+/* .topic{
     position: relative;
     width: 100%;
     height: 100%;
@@ -43,9 +43,9 @@ body{
     margin-top: 10px;
     
   
-  }
+  } */
   
-  .topic h1{
+  /* .topic h1{
     position: absolute;
     align-items: center;
     text-align: center;
@@ -61,7 +61,7 @@ body{
   .topic h1:nth-child(2){
     color: transparent;
     -webkit-text-stroke: 2px #1dafe4;
-  }
+  } */
   
   @keyframes flicker {
     0% {
@@ -89,7 +89,7 @@ body{
   .main-sig .rightt{
     /* border: 2px solid pink; */
     width: 30%;
-    margin-left: 70%;
+    margin-left: 60%;
     margin-top: -730px;
   
   

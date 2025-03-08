@@ -2,24 +2,30 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/Login.css';
 import sample from '../assets/sample.jpg'
+import TypingAnimation from '../component/TypingText';
 
 const Login = () => {
 
   return (
     <>
-    <div className='topic'>
-   <h2>
-      Flowfi
-    </h2>
-    <h2>
-    Flowfi
-    </h2>
-   </div>
+    
 
    <div className='main-log'>
     <div className='left'>
+    <div className='topic'>
+        <h1>
+            FlowFi
+          </h1>
+          <h1>
+          FlowFi
+          </h1>
+          {/* <h2>Effortless money flow management</h2> */}
+          <TypingAnimation/>
+    </div>
 
-   <img src={sample} alt='sample' className='sample'></img>
+
+
+   
 
     </div>
     <div className='right'>
