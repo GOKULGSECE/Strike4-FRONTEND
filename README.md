@@ -15,9 +15,9 @@ The official template repository for Define 3.0
 ### Team Members
 | Name | Role | GitHub | LinkedIn |
 |------|------|--------|----------|
-| [Gokul G] | [Frontend Developer] | [@gokulgsece](https://github.com/gokulgsece) | [Profile](https://linkedin.com/in/rishab-s-0aa28b21a) |
+| [Gokul G] | [Frontend Developer] | [@GOKULGSECE](https://github.com/GOKULGSECE) | [Profile](https://linkedin.com/in/gokul-g-760a23259) |
 | [Rithish S] | [Backend Developer] | [@rithish5513u](https://github.com/rithish5513u) | [Profile](https://linkedin.com/in/rithish-s) |
-| [Rishab S] | [Backend Developer] | [@rishabtr](https://github.com/rishabtr) | [Profile](https://linkedin.com/in/gokul-g-760a23259) |
+| [Rishab S] | [Backend Developer] | [@rishabtr](https://github.com/rishabtr) | [Profile](https://linkedin.com/in/rishab-s-0aa28b21a) |
 | [Tamilkumaran N] | [Front End Developer] | [@tamilkumaran17](https://github.com/tamilkumaran17) | [Profile](https://linkedin.com/in/tamilkumarann) |
 
 ## Project Details
