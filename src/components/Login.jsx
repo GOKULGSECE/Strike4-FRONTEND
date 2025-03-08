@@ -9,10 +9,10 @@ const Login = () => {
     <>
     <div className='topic'>
    <h2>
-      sample
+      Flowfi
     </h2>
     <h2>
-    sample
+    Flowfi
     </h2>
    </div>
 
