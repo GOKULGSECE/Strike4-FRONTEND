@@ -1,11 +1,8 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import Login from './components/Login';
 import SignUp from './components/SignUp';
 import Homepage from './component/homepage';
-// import './App.css'
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import PreferencesForm from './component/PreferencesForm';
 
 function App() {
   return (
@@ -15,6 +12,7 @@ function App() {
           <Route path="/" element={<Login />}/>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/homepage" element={<Homepage/>} />
+          <Route path="/preference" element={<PreferencesForm/>}/>
         </Routes>
       </div>
     </BrowserRouter>
