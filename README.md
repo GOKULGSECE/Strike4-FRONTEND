@@ -41,9 +41,9 @@ Replace VIDEO_ID with your YouTube video ID or provide an alternative demo link
 ## Technical Implementation
 
 ### Technologies Used
-- *Frontend*: [Technologies]
-- *Backend*: [Technologies]
-- *Database*: [Technologies]
+- *Frontend*: ReactJS
+- *Backend*: NodeJS/Flask
+- *Database*: MongoDB
 - *APIs*: [Technologies]
 - *DevOps*: [Technologies]
 - *Other Tools*: [Technologies]
