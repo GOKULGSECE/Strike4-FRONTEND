@@ -30,6 +30,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background: #4de2c2;
+  overflow: hidden;
 }
 
 code {
