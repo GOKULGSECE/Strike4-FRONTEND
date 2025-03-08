@@ -3,7 +3,7 @@ import { Checkbox, Button, Card } from "antd";
 import "../styles/preferences.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
-import { updatePreferences } from "../redux/preferenceSlice";
+import { updatePreferences } from "../redux/preferencesSlice";
 import { message} from 'antd';
 
 const preferencesData = {
