@@ -1,10 +1,10 @@
 
 .chatbot-button {
   position: fixed;
-  bottom: 20px;
-  right: 20px;
-  background-color: #007bff;
-  color: white;
+  bottom: 40px;
+  right: 30px;
+  background: #4de2c2;
+  color: rgb(0, 0, 0);
   border: none;
   padding: 10px 15px;
   border-radius: 50px;
@@ -12,13 +12,19 @@
   font-size: 16px;
   z-index: 999;
   font-family: 'Poppins';
+  font-weight: bolder;
+}
+
+.chatbot-button:hover{
+  transform: scale(1.02);
+  transition: .3s ease-in;
 }
 
 
 .chatbot-container {
   position: fixed;
-  bottom: 80px;
-  right: 20px;
+  bottom: 100px;
+  right: 30px;
   width: 400px;
   height: 550px;
   background: white;
@@ -41,6 +47,16 @@
   border-top-right-radius: 10px;
 }
 
+.chatbot-header span
+{
+  font-weight: bold;
+}
+
+.chatbot-header button{
+  border-radius: 5px;
+  border: none;
+}
+
 
 .chatbot-messages {
   flex: 1;
@@ -61,6 +77,7 @@
   border-radius: 10px;
   max-width: 70%;
   word-wrap: break-word;
+
 }
 
 .bot-msg {
@@ -98,6 +115,7 @@
   margin-left: 5px;
   cursor: pointer;
   border-radius: 5px;
+  font-weight: bold;
 }
 
 
@@ -136,11 +154,42 @@ body.dark {
   right: 0;
   align-items: center;
   padding: 20px;
-  background: rgb(79, 185, 197);
+  background: #4de2c2;
   color: white;
   z-index: 2;
   justify-content: flex-end;
 }
+
+.navigation-bar .hometopic{
+  /* border: 2px solid black; */
+  position: relative;
+    display: flex;
+    justify-content: flex-start;
+}
+.navigation-bar .hometopic h1{
+  position: absolute;
+    align-items: center;
+    text-align: flex-start;
+    font-size: 40px;
+    /* padding-left: 18%; */
+    top: -57px;
+    right: 400px;
+
+}
+
+.hometopic h1:nth-child(1){
+  color: #ffffff;
+  text-shadow: 0 0 10px #1dafe4, 0 0 20px #1dafe4, 0 0 40px #1dafe4, 0 0 80px #1dafe4, 0 0 120px #1dafe4;
+  animation: flicker 1.5s infinite alternate;
+}
+
+.hometopic h1:nth-child(2){
+  color: transparent;
+  -webkit-text-stroke: 2px #1dafe4;
+}
+
+
+
 
 .navigation-bar a {
   color: rgb(0, 0, 0);
@@ -223,36 +272,5 @@ body.dark {
   }
 }
 
-.tour-popup {
-  position: absolute;
-  background: white;
-  padding: 15px;
-  border-radius: 8px;
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-  z-index: 1001;
-  width: 250px;
-}
 
-.tour-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.tour-content button {
-  margin-top: 10px;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.tour-content button:first-child {
-  background-color: #007bff;
-  color: white;
-}
-
-.tour-content button:last-child {
-  background-color: #ddd;
-}
 

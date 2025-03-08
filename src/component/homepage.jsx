@@ -1,12 +1,18 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Joyride from "react-joyride";
 import "../styles/home.css";
+import TypingAnimation from "./TypingText";
 
 const Homepage = () => {
   const [chatOpen, setChatOpen] = useState(false);
   const [messages, setMessages] = useState([{ text: "Hello! How can I assist you?", sender: "bot" }]);
   const [userInput, setUserInput] = useState("");
-  const [runTour, setRunTour] = useState(true);
+  const [runTour, setRunTour] = useState(false); 
+  useEffect(() => {
+    setTimeout(()=>{
+      setRunTour(true); 
+    },500)
+  },[]); 
 
   const handleSendMessage = () => {
     if (!userInput.trim()) return;
@@ -14,6 +20,7 @@ const Homepage = () => {
     const newMessages = [...messages, { text: userInput, sender: "user" }];
     setMessages(newMessages);
     setUserInput("");
+
     setTimeout(() => {
       const botReply = generateBotResponse(userInput);
       setMessages([...newMessages, { text: botReply, sender: "bot" }]);
@@ -31,28 +38,32 @@ const Homepage = () => {
     {
       target: ".navigation-bar",
       content: "This is the navigation bar. You can access different sections from here.",
+      disableBeacon: true,
     },
     {
       target: ".homeleft",
       content: "This is the left section. It contains additional information.",
+      disableBeacon: true,
     },
     {
       target: ".homecenter",
       content: "This is the main content area where important details are displayed.",
+      disableBeacon: true,
     },
     {
       target: ".homeright",
       content: "This is the right section where extra widgets might be available.",
+      disableBeacon: true,
     },
     {
       target: ".chatbot-button",
       content: "Click here to open the chatbot for assistance!",
+      disableBeacon: true,
     },
   ];
 
   return (
     <>
-      
       <Joyride
         steps={steps}
         run={runTour}
@@ -60,6 +71,7 @@ const Homepage = () => {
         scrollToFirstStep={true}
         showProgress={true}
         showSkipButton={true}
+        disableOverlayClose={true}
         callback={(data) => {
           if (data.status === "finished" || data.status === "skipped") {
             setRunTour(false);
@@ -68,6 +80,15 @@ const Homepage = () => {
       />
 
       <div className="navigation-bar">
+
+            <div className='hometopic'>
+              <h1>
+                  FlowFi
+                </h1>
+                <h1>
+                FlowFi
+                </h1>
+          </div>
         <a href="#">Home</a>
         <a href="#">Dashboard</a>
         <a href="#">Insights</a>
@@ -83,8 +104,9 @@ const Homepage = () => {
       </div>
 
       <button className="chatbot-button" onClick={() => setChatOpen(!chatOpen)}>
-        💬 Chat
+      <i class="fa fa-comments" aria-hidden="true" title='chat bot'></i>
       </button>
+
       {chatOpen && (
         <div className="chatbot-container">
           <div className="chatbot-header">
@@ -99,7 +121,12 @@ const Homepage = () => {
             ))}
           </div>
           <div className="chatbot-input-container">
-            <input type="text" placeholder="Type a message..." value={userInput} onChange={(e) => setUserInput(e.target.value)} onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
+            <input
+              type="text"
+              placeholder="Type a message..."
+              value={userInput}
+              onChange={(e) => setUserInput(e.target.value)}
+              onKeyPress={(e) => e.key === "Enter" && handleSendMessage()}
             />
             <button onClick={handleSendMessage}>Send</button>
           </div>
