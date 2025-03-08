@@ -1,5 +1,5 @@
 import { configureStore } from "@reduxjs/toolkit";
-import preferenceReducer from "./preferencesSlice"; // Ensure correct filename
+import preferenceReducer from "./preferencesSlice";
 import userReducer from "./userSlice";
 
 const store = configureStore({
