@@ -41,7 +41,7 @@
       /* border: 2px solid black; */
       width: 100%;
       height: 630px;
-      margin-top: 10%;
+      margin-top: 15%;
     }
     .main-log .left{
       /* border: 2px solid red; */
@@ -54,10 +54,13 @@
       width: 30%;
       margin-left: 70%;
     margin-top: -630px;
-  
-   
-  
     }
+
+    .main-log .left .sample{
+        margin-left: 70px;
+        border-radius: 20px;
+      
+      }
   
     .main-log .left h1,h3,h4{
       text-align: center;
