@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import { Checkbox, Button, Card } from "antd";
 import "../styles/preferences.css";
+import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updatePreferences } from "../redux/preferencesSlice";
+import { message} from 'antd';
 
 const preferencesData = {
   "General Financial Preferences": [
@@ -46,6 +48,7 @@ const preferencesData = {
 const categoryKeys = Object.keys(preferencesData);
 
 const PreferencesForm = () => {
+  const navigate = useNavigate();
   const dispatch = useDispatch();
   const selectedPreferences = useSelector((state) => state.preference.preferences);
   const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
@@ -69,7 +72,11 @@ const PreferencesForm = () => {
   };
 
   const handleSubmit = () => {
-    console.log("Final Preferences Submitted:", selectedPreferences);
+    setTimeout(()=>{
+        message.success("Completed the intial prefereneces")
+        navigate('/homepage')
+        console.log("Final Preferences Submitted:", selectedPreferences);
+    },2000)
   };
 
   return (
