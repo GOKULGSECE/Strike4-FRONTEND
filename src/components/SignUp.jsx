@@ -10,10 +10,10 @@ const SignUp = () => {
     <>
    <div className='topic'>
    <h1>
-   sample
+   Flowfi
     </h1>
     <h1>
-    sample
+    Flowfi
     </h1>
    </div>
    <div className='main-sig'>

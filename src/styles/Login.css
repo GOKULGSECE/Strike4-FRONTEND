@@ -96,6 +96,8 @@ body{
       box-shadow: 0 2px 8px 3px #f317177c;
       font-family: 'Poppins';
       border-top-color: #00ffa2;
+      background: #359e8795;
+
       
     }
   
@@ -161,7 +163,9 @@ body{
     background-size: 200% 100%;
     animation: neon 2s infinite;
     justify-content: center;
-    margin-left: 70px;
+    margin-left: 100px;
+    
+
   
       
     }
