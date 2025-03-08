@@ -70,14 +70,34 @@ const PreferencesForm = () => {
       setCurrentCategoryIndex(currentCategoryIndex - 1);
     }
   };
-
-  const handleSubmit = () => {
-    setTimeout(()=>{
-        message.success("Completed the intial prefereneces")
-        navigate('/homepage')
-        console.log("Final Preferences Submitted:", selectedPreferences);
-    },2000)
+  const handleSubmit = async () => {
+    try {
+      const selectedPreferencesArray = Object.values(selectedPreferences).flat();
+  
+      const response = await fetch("http://localhost:5000/user/financial-insights", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ preferences: selectedPreferencesArray }),
+      });
+  
+      if (!response.ok) {
+        throw new Error(`Server Error: ${response.status} ${response.statusText}`);
+      }
+  
+      const data = await response.json();
+      message.success("Completed the initial preferences");
+      console.log("Response from backend:", data);
+  
+      navigate("/homepage");
+    } catch (error) {
+      console.error("Error submitting preferences:", error);
+      message.error("Failed to submit preferences");
+    }
   };
+
+
 
   return (
     <div style={{ padding: "20px", maxWidth: "500px", margin: "auto" }}>

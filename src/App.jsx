@@ -4,12 +4,14 @@ import Homepage from './component/homepage';
 import NewsCard from './component/NewsCard';
 import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import PreferencesForm from './component/PreferencesForm';
+import FileUpload from './fileupload';
 
 function App() {
   return (
     <BrowserRouter>
       <div className="App">
         <Routes>
+          <Route path="/upload" element={<FileUpload/>}></Route>
           <Route path="/" element={<Login />}/>
           <Route path="/signup" element={<SignUp />} />
           <Route path="/homepage" element={<Homepage/>} />
