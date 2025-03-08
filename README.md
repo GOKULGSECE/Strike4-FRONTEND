@@ -1,4 +1,3 @@
-
 # Define 3.0
 The official template repository for Define 3.0
 
@@ -10,31 +9,31 @@ The official template repository for Define 3.0
  Cover Image  If applicable
 
 ### Team Information
-- **Team Name**: <Team Name> 
-- **Track**: < Track >
+- *Team Name*: Strike4 
+- *Track*: Fintech
 
 ### Team Members
 | Name | Role | GitHub | LinkedIn |
 |------|------|--------|----------|
-| [Full Name] | [Role] | [@username](https://github.com/username) | [Profile](https://linkedin.com/in/username) |
-| [Full Name] | [Role] | [@username](https://github.com/username) | [Profile](https://linkedin.com/in/username) |
-| [Full Name] | [Role] | [@username](https://github.com/username) | [Profile](https://linkedin.com/in/username) |
-| [Full Name] | [Role] | [@username](https://github.com/username) | [Profile](https://linkedin.com/in/username) |
+| [Gokul G] | [Frontend Developer] | [@gokulgsece](https://github.com/gokulgsece) | [Profile](https://linkedin.com/in/rishab-s-0aa28b21a) |
+| [Rithish S] | [Backend Developer] | [@rithish5513u](https://github.com/rithish5513u) | [Profile](https://linkedin.com/in/rithish-s) |
+| [Rishab S] | [Backend Developer] | [@rishabtr](https://github.com/rishabtr) | [Profile](https://linkedin.com/in/gokul-g-760a23259) |
+| [Tamilkumaran N] | [Front End Developer] | [@tamilkumaran17](https://github.com/tamilkumaran17) | [Profile](https://linkedin.com/in/tamilkumarann) |
 
 ## Project Details
 
 ### Overview
-_A concise summary of your project (2-3 sentences)_
+A concise summary of your project (2-3 sentences)
 
 ### Problem Statement
-_Describe the problem your project aims to solve_
+Describe the problem your project aims to solve
 
 ### Solution
-_Explain your approach to solving the problem_
+Explain your approach to solving the problem
 
 ### Demo
 [![Project Demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
-_Replace VIDEO_ID with your YouTube video ID or provide an alternative demo link_
+Replace VIDEO_ID with your YouTube video ID or provide an alternative demo link
 
 ### Live Project
 [Project Name](https://your-project-url.com)
@@ -42,12 +41,12 @@ _Replace VIDEO_ID with your YouTube video ID or provide an alternative demo link
 ## Technical Implementation
 
 ### Technologies Used
-- **Frontend**: [Technologies]
-- **Backend**: [Technologies]
-- **Database**: [Technologies]
-- **APIs**: [Technologies]
-- **DevOps**: [Technologies]
-- **Other Tools**: [Technologies]
+- *Frontend*: [Technologies]
+- *Backend*: [Technologies]
+- *Database*: [Technologies]
+- *APIs*: [Technologies]
+- *DevOps*: [Technologies]
+- *Other Tools*: [Technologies]
 
 ### Key Features
 - Feature 1
@@ -62,25 +61,25 @@ _Replace VIDEO_ID with your YouTube video ID or provide an alternative demo link
 - Requirement 3
 
 ### Installation 
-```bash
+bash
 
-```
+
 
 ### Running the Project
-```bash
+bash
 
-```
+
 
 ## Additional Resources
 
 ### Project Timeline
-_Brief overview of your development process and milestones_
+Brief overview of your development process and milestones
 
 ### Challenges Faced
-_Discuss technical challenges and how you overcame them_
+Discuss technical challenges and how you overcame them
 
 ### Future Enhancements
-_Share your vision for future development_
+Share your vision for future development
 
 ### References (if any)
 - [Reference 1](link)
