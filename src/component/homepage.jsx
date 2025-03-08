@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import Joyride from "react-joyride";
 import "../styles/home.css";
-import TypingAnimation from "./TypingText";
 
 const Homepage = () => {
   const [chatOpen, setChatOpen] = useState(false);
@@ -13,6 +12,10 @@ const Homepage = () => {
       setRunTour(true); 
     },500)
   },[]); 
+
+
+  const [showProfile, setShowProfile] = useState(false);
+
 
   const handleSendMessage = () => {
     if (!userInput.trim()) return;
@@ -92,16 +95,30 @@ const Homepage = () => {
         <a href="#">Home</a>
         <a href="#">Dashboard</a>
         <a href="#">Insights</a>
-        <div className="profile-icon">
+        <div className="profile-icon" onClick={()=>setShowProfile(true)}>
           <i className="fas fa-user"></i>
         </div>
       </div>
+      {
+        showProfile && (
+          <div className="profile-popup-overlay" onClick={() => setShowProfile(false)}>
+            <div className="profile-popup">
+              <button className="close-btn" onClick={() => setShowProfile(false)}>✖</button>
+              <h2>User Profile</h2>
+              <p>Name: John Doe</p>
+            </div>
+          </div>
+        )
+      }
 
       <div className="home-container">
         <div className="homeleft">Left Content</div>
-        <div className="homecenter">Center Content</div>
+        <div className="homecenter"></div>
         <div className="homeright">Right Content</div>
       </div>
+
+      
+
 
       <button className="chatbot-button" onClick={() => setChatOpen(!chatOpen)}>
       <i class="fa fa-comments" aria-hidden="true" title='chat bot'></i>
