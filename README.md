@@ -23,20 +23,20 @@ The official template repository for Define 3.0
 ## Project Details
 
 ### Overview
-A concise summary of your project (2-3 sentences)
+We're building a fintech platform with an AI-powered chatbot to provide financial insights and customer support. Our platform pulls data from publicly available APIs to deliver personalized financial news. With a user-friendly dashboard, you can track your finances, analyze trends, and manage a virtual investment portfolio. Plus, you can upload your bank statements for automatic income and expense analysis. Our goal is to make financial management easier, helping users make smarter money decisions.
 
 ### Problem Statement
-Describe the problem your project aims to solve
+Develop a basic prototype of a fintech website with an AI-powered chatbot that provides users with financial insights and customer support. The website should have a clean, user-friendly interface with a simple dashboard displaying sample financial data and a chatbot capable of handling basic FAQs related to fintech services.
 
 ### Solution
-Explain your approach to solving the problem
+We're building a fintech platform with an AI-powered chatbot to provide financial insights and customer support. Our platform pulls data from publicly available APIs to deliver personalized financial news. With a user-friendly dashboard, you can track your finances, analyze trends, and manage a virtual investment portfolio. Plus, you can upload your bank statements for automatic income and expense analysis. Our goal is to make financial management easier, helping users make smarter money decisions.
 
 ### Demo
 [![Project Demo](https://img.youtube.com/vi/VIDEO_ID/0.jpg)](https://www.youtube.com/watch?v=VIDEO_ID)
 Replace VIDEO_ID with your YouTube video ID or provide an alternative demo link
 
 ### Live Project
-[Project Name](https://your-project-url.com)
+[Project Name]FlowFii
 
 ## Technical Implementation
 
