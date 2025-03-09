@@ -4,6 +4,7 @@ import "../styles/preferences.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updatePreferences } from "../redux/preferencesSlice";
+import { setPrivateKey} from "../redux/privatekey";
 import { message} from 'antd';
 
 const preferencesData = {
@@ -50,11 +51,12 @@ const categoryKeys = Object.keys(preferencesData);
 const PreferencesForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
+  const privateKey = useSelector((state) => state.privateKey.privateKey);
   const selectedPreferences = useSelector((state) => state.preference.preferences);
   const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
 
   const currentCategory = categoryKeys[currentCategoryIndex];
-
+  // console.log(privateKey);
   const handleCheckboxChange = (checkedValues) => {
     dispatch(updatePreferences({ [currentCategory]: checkedValues }));
   };
@@ -73,13 +75,18 @@ const PreferencesForm = () => {
   const handleSubmit = async () => {
     try {
       const selectedPreferencesArray = Object.values(selectedPreferences).flat();
-  
+      // console.log("Selected Preferences:", selectedPreferencesArray);
+      
+      const requestBody = { preferences: selectedPreferencesArray };
+      console.log("Request Body:", JSON.stringify(requestBody));
+      // console.log("Token:", privateKey);
       const response = await fetch("http://localhost:5000/user/financial-insights", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Authorization": `Bearer ${privateKey}`,
         },
-        body: JSON.stringify({ preferences: selectedPreferencesArray }),
+        body: JSON.stringify(requestBody),
       });
   
       if (!response.ok) {

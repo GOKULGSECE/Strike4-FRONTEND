@@ -4,9 +4,13 @@ import axios from 'axios';
 import '../styles/Login.css';
 import TypingAnimation from '../component/TypingText';
 import {message} from 'antd'
+import {setPrivateKey} from '../redux/privatekey';
+import {useDispatch, useSelector} from 'react-redux';
 
 const Login = () => {
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const privateKey = useSelector((state) => state.privateKey.privateKey);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [loading, setLoading] = useState(false); 
@@ -18,7 +22,17 @@ const Login = () => {
       setLoading(true);
       const loginData = { email, password };
 
-      await axios.post("http://localhost:5000/user/login", loginData);
+      const response = await axios.post("http://localhost:5000/user/login", loginData);
+      // console.log(response.data.token);
+      dispatch(setPrivateKey(response.data.token));
+      
+      console.log(privateKey);
+      // if(response.data.token){
+      //   localStorage.setItem('token', response.data.token);
+      // }
+      // else{
+      //   console.log("login failed")
+      // }
       setLoading(false);
       message.success("Login Successful");
       setTimeout(()=>{
@@ -28,7 +42,7 @@ const Login = () => {
       
     } catch (error) {
       setLoading(false);
-      message.error("User credentials are wrong");
+      message.error(error);
     }
   };
 
