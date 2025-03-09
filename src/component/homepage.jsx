@@ -3,7 +3,7 @@ import Joyride from "react-joyride";
 import { Menu, Dropdown, Avatar } from "antd";
 import { UserOutlined, PoweroffOutlined, ManOutlined, WomanOutlined } from "@ant-design/icons";
 import "../styles/home.css";
-import NewsCard from '../component/NewsCard.jsx';
+import { useSelector } from "react-redux";
 
 const Homepage = () => {
   const [chatOpen, setChatOpen] = useState(false);
@@ -11,6 +11,7 @@ const Homepage = () => {
   const [userInput, setUserInput] = useState("");
   const [runTour, setRunTour] = useState(false);
   const [userGender, setUserGender] = useState("male");
+  const privateKey = useSelector((state) => state.privateKey.privateKey);
 
   useEffect(() => {
     setTimeout(() => {
@@ -22,18 +23,36 @@ const Homepage = () => {
   const [showProfile, setShowProfile] = useState(false);
 
 
-  const handleSendMessage = () => {
+  const handleSendMessage = async () => {
     if (!userInput.trim()) return;
 
     const newMessages = [...messages, { text: userInput, sender: "user" }];
     setMessages(newMessages);
     setUserInput("");
 
-    setTimeout(() => {
-      const botReply = generateBotResponse(userInput);
-      setMessages([...newMessages, { text: botReply, sender: "bot" }]);
-    }, 1000);
+    try {
+      console.log(privateKey)
+      const response = await fetch("http://localhost:5000/faqHandler", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "Authorization": `Bearer ${privateKey}`,
+        },
+        body: JSON.stringify({ user_query: userInput }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`Server Error: ${response.status} ${response.statusText}`);
+      }
+
+      const data = await response.json();
+      setMessages([...newMessages, { text: data.response, sender: "bot" }]);
+    } catch (error) {
+      console.error("Error fetching response:", error);
+      setMessages([...newMessages, { text: "Sorry, something went wrong.", sender: "bot" }]);
+    }
   };
+
 
   const generateBotResponse = (input) => {
     const lowerInput = input.toLowerCase();
@@ -83,13 +102,13 @@ const Homepage = () => {
           <h1>FlowFi</h1>
           <h1>FlowFi</h1>
         </div>
-        
+
         <a href="/homepage">Home</a>
         <a href="/platform">Platform</a>
         <a href="/dashboard">Dashboard</a>
         <a href="/insights">Insights</a>
 
-        <Dropdown  trigger={["click"]}>
+        <Dropdown trigger={["click"]}>
           <div className="profile-icon" onClick={(e) => e.preventDefault()}>
             <Avatar
               icon={userGender === "male" ? <ManOutlined /> : <WomanOutlined />}
@@ -116,7 +135,7 @@ const Homepage = () => {
         <div className="homeright">Right Content</div>
       </div>
 
-      
+
 
 
       <button className="chatbot-button" onClick={() => setChatOpen(!chatOpen)}>
