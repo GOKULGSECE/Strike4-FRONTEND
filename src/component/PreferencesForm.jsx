@@ -4,7 +4,6 @@ import "../styles/preferences.css";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updatePreferences } from "../redux/preferencesSlice";
-import { setPrivateKey} from "../redux/privatekey";
 import { message} from 'antd';
 
 const preferencesData = {
@@ -94,10 +93,12 @@ const PreferencesForm = () => {
       }
   
       const data = await response.json();
-      message.success("Completed the initial preferences");
-      console.log("Response from backend:", data);
-  
-      navigate("/homepage");
+      setTimeout(() => {
+        message.success("Completed the initial preferences");
+        console.log("Response from backend:", data);
+        navigate("/homepage");
+      },3000);
+      
     } catch (error) {
       console.error("Error submitting preferences:", error);
       message.error("Failed to submit preferences");
