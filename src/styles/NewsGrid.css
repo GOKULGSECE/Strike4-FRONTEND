@@ -80,3 +80,26 @@ body{
   
 
 }
+.marquee-container {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+}
+
+.marquee-text {
+  display: inline-block;
+  font-size: 18px;
+  font-weight: bold;
+  color: red;
+  animation: moveText 5s linear infinite;
+}
+
+@keyframes moveText {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(100%);
+  }
+}

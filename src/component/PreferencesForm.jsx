@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import { Checkbox, Button, Card } from "antd";
-import "../styles/preferences.css";
+import { Checkbox, Button, Card, message } from "antd";
 import { useNavigate } from "react-router-dom";
 import { useSelector, useDispatch } from "react-redux";
 import { updatePreferences } from "../redux/preferencesSlice";
-import { message} from 'antd';
+import "../styles/preferences.css";
 
 const preferencesData = {
   "General Financial Preferences": [
@@ -50,12 +49,13 @@ const categoryKeys = Object.keys(preferencesData);
 const PreferencesForm = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
-  const privateKey = useSelector((state) => state.privateKey.privateKey);
-  const selectedPreferences = useSelector((state) => state.preference.preferences);
-  const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
 
+  const selectedPreferences = useSelector((state) => state.preference.preferences);
+  const privateKey = useSelector((state) => state.privateKey.privateKey);
+
+  const [currentCategoryIndex, setCurrentCategoryIndex] = useState(0);
   const currentCategory = categoryKeys[currentCategoryIndex];
-  // console.log(privateKey);
+
   const handleCheckboxChange = (checkedValues) => {
     dispatch(updatePreferences({ [currentCategory]: checkedValues }));
   };
@@ -71,14 +71,14 @@ const PreferencesForm = () => {
       setCurrentCategoryIndex(currentCategoryIndex - 1);
     }
   };
+
   const handleSubmit = async () => {
     try {
       const selectedPreferencesArray = Object.values(selectedPreferences).flat();
-      // console.log("Selected Preferences:", selectedPreferencesArray);
-      
       const requestBody = { preferences: selectedPreferencesArray };
+
       console.log("Request Body:", JSON.stringify(requestBody));
-      // console.log("Token:", privateKey);
+
       const response = await fetch("http://localhost:5000/user/financial-insights", {
         method: "POST",
         headers: {
@@ -87,25 +87,24 @@ const PreferencesForm = () => {
         },
         body: JSON.stringify(requestBody),
       });
-  
+
       if (!response.ok) {
         throw new Error(`Server Error: ${response.status} ${response.statusText}`);
       }
-  
+
       const data = await response.json();
-      setTimeout(() => {
-        message.success("Completed the initial preferences");
-        console.log("Response from backend:", data);
-        navigate("/homepage");
-      },3000);
-      
+      console.log("Response from backend:", data);
+
+      dispatch(updatePreferences(data.preference));
+
+      message.success("Completed the initial preferences");
+      setTimeout(() => navigate("/insights", { state: { articles: data.preference } }), 2000);
+
     } catch (error) {
       console.error("Error submitting preferences:", error);
       message.error("Failed to submit preferences");
     }
   };
-
-
 
   return (
     <div style={{ padding: "20px", maxWidth: "500px", margin: "auto" }}>

@@ -1,18 +1,18 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
-  preferences: {},
+  preferences: [], // ✅ Ensure it's an array, not an object
 };
 
-const preferenceSlice = createSlice({
+const preferencesSlice = createSlice({
   name: "preference",
   initialState,
   reducers: {
     updatePreferences: (state, action) => {
-      state.preferences = { ...state.preferences, ...action.payload };
+      state.preferences = action.payload; // ✅ Update preferences properly
     },
   },
 });
 
-export const { updatePreferences } = preferenceSlice.actions;
-export default preferenceSlice.reducer;
+export const { updatePreferences } = preferencesSlice.actions;
+export default preferencesSlice.reducer;
