@@ -4,6 +4,7 @@ import { Menu, Dropdown, Avatar } from "antd";
 import { UserOutlined, PoweroffOutlined, ManOutlined, WomanOutlined } from "@ant-design/icons";
 import "../styles/home.css";
 import { useSelector } from "react-redux";
+import InvestorList from "./Investor";
 
 const Homepage = () => {
   const [chatOpen, setChatOpen] = useState(false);
@@ -69,6 +70,8 @@ const Homepage = () => {
     { target: ".chatbot-button", content: "Click here to open the chatbot!", disableBeacon: true },
   ];
 
+  
+
   const menu = (
     <Menu>
       <Menu.Item key="1" icon={<UserOutlined />}>
@@ -79,6 +82,43 @@ const Homepage = () => {
       </Menu.Item>
     </Menu>
   );
+
+
+  // left-container
+
+  const [marketData, setMarketData] = useState([
+    // {
+    //   marketType: "Stock Market",
+    //   region: "North America",
+    //   primaryExchange: "New York Stock Exchange (NYSE)"
+    // },
+    // {
+    //   marketType: "Forex",
+    //   region: "Global",
+    //   primaryExchange: "Foreign Exchange Market"
+    // },
+    // {
+    //   marketType: "Cryptocurrency",
+    //   region: "Worldwide",
+    //   primaryExchange: "Binance"
+    // },
+    // {
+    //   marketType: "Commodity Market",
+    //   region: "Asia",
+    //   primaryExchange: "Tokyo Commodity Exchange"
+    // },
+  
+  ]);
+
+
+  useEffect(() => {
+    
+    fetch("http://localhost:5000/market-data")
+      .then((response) => response.json())
+      .then((data) => setMarketData(data))
+      .catch((error) => console.error("Error fetching market data:", error));
+  }, []);
+
 
   return (
     <>
@@ -130,8 +170,21 @@ const Homepage = () => {
       }
 
       <div className="home-container">
-        <div className="homeleft">Left Content</div>
-        <div className="homecenter"></div>
+      <div className="homeleft">
+        <div className="market-data-container">
+          {marketData.map((item, index) => (
+            <div key={index} className="market-data-item">
+              <p><strong>Market Type:</strong> {item.marketType}</p>
+              <p><strong>Region:</strong> {item.region}</p>
+              <p><strong>Primary Exchange:</strong> {item.primaryExchange}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+
+        <div className="homecenter">
+          <InvestorList/>
+        </div>
         <div className="homeright">Right Content</div>
       </div>
 
