@@ -6,7 +6,8 @@ The official template repository for Define 3.0
 ---
 
 # FlowFii
-*Cover Image (If applicable)*
+![Homepage](https://github.com/user-attachments/assets/79e98292-d09c-430d-aae6-83cf3848486e)
+
 
 ### Team Information
 - **Team Name**: Strike4
@@ -50,8 +51,7 @@ FlowFii offers an intuitive fintech platform with an AI-powered chatbot, deliver
 - **Backend**: NodeJS, Flask
 - **Database**: MongoDB
 - **APIs**: Alpha Vantage, Plaid API, NewsAPI
-- **DevOps**: Docker, AWS (EC2, S3, Lambda)
-- **Other Tools**: Postman, GitHub Actions, Jest (for testing)
+- **Other Tools**: Postman, GitHub
 
 ### Key Features
 - **Virtual Trading & Stock Market Simulation**: Users can practice trading in a risk-free environment.
@@ -136,8 +136,8 @@ python app.py
 
 ### References
 - [Alpha Vantage API](https://www.alphavantage.co/)
-- [Plaid API](https://plaid.com/docs/)
 - [NewsAPI](https://newsapi.org/)
+- [Gemini API](https://ai.google.dev/gemini-api/docs)
 
 ---
 
