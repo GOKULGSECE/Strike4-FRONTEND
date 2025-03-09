@@ -28,6 +28,11 @@ const Platform = () => {
   const [selectedStock, setSelectedStock] = useState(null);
   const [quantity, setQuantity] = useState(1);
   const [modalType, setModalType] = useState(""); // 'buy' or 'sell'
+  const [userBalance, setUserBalance] = useState(50000); // User's currency balance
+  const [ownedStocks, setOwnedStocks] = useState([
+    { name: "AAPL", quantity: 5 },
+    { name: "TSLA", quantity: 2 },
+  ]); // Example stocks owned
 
   // Handle Wishlist Click (Buy)
   const handleWishlistClick = (stock) => {
@@ -49,8 +54,28 @@ const Platform = () => {
   const handleAction = () => {
     if (modalType === "buy") {
       alert(`Bought ${quantity} shares of ${selectedStock.name}`);
+      setUserBalance(userBalance - 1000 * quantity); // Example price deduction
+      setOwnedStocks((prevStocks) => {
+        const existingStock = prevStocks.find((s) => s.name === selectedStock.name);
+        if (existingStock) {
+          return prevStocks.map((s) =>
+            s.name === selectedStock.name ? { ...s, quantity: s.quantity + parseInt(quantity) } : s
+          );
+        }
+        return [...prevStocks, { name: selectedStock.name, quantity: parseInt(quantity) }];
+      });
     } else {
       alert(`Sold ${quantity} shares of ${selectedStock.name}`);
+      setUserBalance(userBalance + 1000 * quantity); // Example price addition
+      setOwnedStocks((prevStocks) =>
+        prevStocks
+          .map((s) =>
+            s.name === selectedStock.name
+              ? { ...s, quantity: s.quantity - parseInt(quantity) }
+              : s
+          )
+          .filter((s) => s.quantity > 0)
+      );
     }
     setModalVisible(false);
   };
@@ -89,6 +114,24 @@ const Platform = () => {
               </li>
             ))}
           </ul>
+
+          {/* New Section: User Balance & Owned Stocks */}
+          <div className="user-assets">
+            <h3>Current Holdings</h3>
+            <p><strong>Balance:</strong> ${userBalance.toLocaleString()}</p>
+            <h4>Stocks Owned:</h4>
+            <ul className="owned-stocks">
+              {ownedStocks.length > 0 ? (
+                ownedStocks.map((stock, index) => (
+                  <li key={index}>
+                    {stock.name} - {stock.quantity} shares
+                  </li>
+                ))
+              ) : (
+                <p>No stocks owned</p>
+              )}
+            </ul>
+          </div>
         </div>
 
         {/* Middle Panel - Portfolio */}

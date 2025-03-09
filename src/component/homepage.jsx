@@ -290,6 +290,7 @@ const Homepage = () => {
 
       <div className="home-container">
       <div className="homeleft">
+        <h2> Globle Markets</h2>
         <div className="market-data-container">
           {marketData.map((item, index) => (
             <div key={index} className="market-data-item">
