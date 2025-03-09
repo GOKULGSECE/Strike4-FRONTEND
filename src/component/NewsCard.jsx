@@ -24,20 +24,11 @@ const articles = [
       "https://media.wired.com/photos/67c7052b740da90b2e8bbbde/191:100/w_1280,c_limit/GettyImages-2062120626%20(1).jpg",
   },
   {
-    author: "John Doe",
+    author: "Jane Smith",
     description:
-      "Tech industry is booming with AI advancements, leading to innovations in multiple sectors.",
-    title: "How AI is Revolutionizing the Tech Industry",
-    url: "https://www.example.com/ai-revolution",
-    urlToImage:
-      "https://media.wired.com/photos/67c7052b740da90b2e8bbbde/191:100/w_1280,c_limit/GettyImages-2062120626%20(1).jpg",
-  },
-  {
-    author: "John Doe",
-    description:
-      "Tech industry is booming with AI advancements, leading to innovations in multiple sectors.",
-    title: "How AI is Revolutionizing the Tech Industry",
-    url: "https://www.example.com/ai-revolution",
+      "The future of blockchain technology and how it will impact various industries.",
+    title: "Blockchain: The Next Big Revolution",
+    url: "https://www.example.com/blockchain-future",
     urlToImage:
       "https://media.wired.com/photos/67c7052b740da90b2e8bbbde/191:100/w_1280,c_limit/GettyImages-2062120626%20(1).jpg",
   },
@@ -47,15 +38,14 @@ const NewsCard = () => {
   const [selectedArticle, setSelectedArticle] = useState(null);
   const [userGender, setUserGender] = useState("male");
 
-
   return (
     <>
-    <div className="navigation-bar">
+      {/* Navigation Bar */}
+      <div className="navigation-bar">
         <div className="hometopic">
           <h1>FlowFi</h1>
-          <h1>FlowFi</h1>
         </div>
-        
+
         <a href="/homepage">Home</a>
         <a href="/platform">Platform</a>
         <a href="/dashboard">Dashboard</a>
@@ -70,27 +60,33 @@ const NewsCard = () => {
           </div>
         </Dropdown>
       </div>
-    <div className="news-container">
-      {articles.map((article, index) => (
-        <div className="news-card" key={index} onClick={() => setSelectedArticle(article)}>
-          <img src={article.urlToImage} alt={article.title} className="news-image" />
-          <div className="news-content">
-            <h3 className="news-title">{article.title}</h3>
-            <p className="news-author">{article.author}</p>
-            <p className="news-description">
-              {article.description.length > 120 ? `${article.description.substring(0, 120)}...` : article.description}
-            </p>
-            <a href={article.url} target="_blank" rel="noopener noreferrer" className="news-link">
-              Read More →
-            </a>
-          </div>
-        </div>
-      ))}
 
-      {selectedArticle && (
-        <OverviewPage article={selectedArticle} onClose={() => setSelectedArticle(null)} />
-      )}
-    </div>
+
+      <div className="news-container">
+        <div className="news-scroll">
+          {articles.map((article, index) => (
+            <div className="news-card" key={index} onClick={() => setSelectedArticle(article)}>
+              <img src={article.urlToImage} alt={article.title} className="news-image" />
+              <div className="news-content">
+                <h3 className="news-title">{article.title}</h3>
+                <p className="news-author">{article.author}</p>
+                <p className="news-description">
+                  {article.description.length > 120
+                    ? `${article.description.substring(0, 120)}...`
+                    : article.description}
+                </p>
+                <a href={article.url} target="_blank" rel="noopener noreferrer" className="news-link">
+                  Read More →
+                </a>
+              </div>
+            </div>
+          ))}
+        </div>
+
+        {selectedArticle && (
+          <OverviewPage article={selectedArticle} onClose={() => setSelectedArticle(null)} />
+        )}
+      </div>
     </>
   );
 };
