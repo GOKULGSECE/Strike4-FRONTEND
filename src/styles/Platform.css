@@ -38,6 +38,13 @@
   margin-top: 10px;
 }
 
+.wishlist-btn
+{
+ /* margin-right: 70px;  */
+ margin-left: 40%;
+  cursor: pointer;
+}
+
 .middle-panel {
   background: #fff;
   padding: 15px;
