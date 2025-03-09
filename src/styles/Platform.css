@@ -23,6 +23,34 @@
   cursor: pointer;
 }
 
+.user-assets
+{
+  margin-top: 180px;
+  margin-left: -10px;
+  background: #fff;
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  width: 360px;
+  
+}
+
+.user-assets p{
+  margin-left: 111px;
+}
+.user-assets h4{
+  margin-top: 50px;
+}
+
+
+
+
+.user-assets .owned-stocks li{
+  margin-left: 120px;
+
+ 
+}
+
 .middle-panel {
   background: #fff;
   padding: 15px;
