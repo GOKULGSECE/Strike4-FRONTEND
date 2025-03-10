@@ -40,7 +40,8 @@ FlowFii offers an intuitive fintech platform with an AI-powered chatbot, deliver
 - **A dynamic news feed** tailored to user interests.
 
 ### Demo
-[![Project Demo](https://i.vimeocdn.com/video/1991414377-c15006d94fc935e4adfee74da13b1f6413f758a5e77bb06ccf67576da21aaf6f-d_2400)](https://vimeo.com/1064156587/244e61a66c)
+[![Project Demo](https://vimeo.com/1064156587/244e61a66c?ts=0&share=copy)]
+
 
 ### Live Project
 [FlowFii](https://flowfii-demo-link.com)
